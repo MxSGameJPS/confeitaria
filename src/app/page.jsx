@@ -1,66 +1,42 @@
-import Image from "next/image";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
+    <>
+      <Header />
+      <main className={styles.hero}>
+        <div className={styles.info}>
+          <h1>Abraço de Vó</h1>
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            Bem-vindo à Abraço de Vó — onde cada receita vem com memória,
+            carinho e ingredientes selecionados. Fundada em 1995, nossa
+            confeitaria nasceu de receitas passadas entre gerações e de um
+            desejo simples: adoçar a vida das pessoas.
           </p>
+          <Link href="/loja" className={styles.cta}>
+            Ir para a loja
+          </Link>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+        <div className={styles.gallery}>
+          <div className={styles.big}>
+            <video
+              className={styles.heroVideo}
+              src={
+                "/videos/Video%20Reels%20para%20Bolos%20ou%20Tortas%20-%20Bolo%20Chocolatudo.mp4"
+              }
+              autoPlay
+              muted
+              loop
+              playsInline
             />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+         
         </div>
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }

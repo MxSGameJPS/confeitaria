@@ -1,0 +1,123 @@
+.container {
+  padding: 28px;
+  color: #6b4f4b;
+}
+
+.container h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: var(--card-bg);
+}
+.section {
+  margin-top: 18px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+}
+/* Formulário de produto */
+.productForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+  background: #f8e6e6;
+  padding: 18px;
+  border-radius: 8px;
+}
+.productForm label {
+  font-weight: bold;
+  color: #6b4f4b;
+  margin-bottom: 2px;
+}
+.productForm input,
+.productForm textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e03c3c;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  color: #222;
+}
+.productForm label[for="promotion"] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.productForm input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+.productForm button {
+  background: #e03c3c;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.productForm button:hover {
+  background: #ff6b6b;
+}
+/* Lista de produtos */
+.productList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.productItem {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 12px;
+  color: #6b4f4b;
+}
+.productItem button {
+  margin-right: 8px;
+  background: #e03c3c;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.productItem button:hover {
+  background: #ff6b6b;
+}
+/* Abas do dashboard */
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.tabs button {
+  background: #e03c3c;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  opacity: 0.7;
+}
+.tabs button:hover {
+  background: #ff6b6b;
+  opacity: 1;
+}
+.active {
+  background: #fff;
+  color: #e03c3c;
+  opacity: 1;
+  border-bottom: 2px solid #e03c3c;
+}

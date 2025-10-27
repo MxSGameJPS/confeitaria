@@ -1,32 +1,118 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+/* Página principal - estilos do hero e blocos iniciais */
 
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+:root {
+  /* Garantir variáveis locais caso não estejam definidas globalmente */
+  --background: #d87093;
+  --card-bg: #ffffff;
+  --accent: #7e0a57;
+  --foreground: #faf9f6;
 }
 
+/* hero (full screen minus header) */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 56px;
+  align-items: center;
+  padding: calc(var(--header-height) + 40px) 48px 48px 48px; /* push content below fixed header */
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.info p {
+  font-size: 20px;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.info h1 {
+  font-size: 48px;
+  color: var(--foreground);
+  margin: 0 0 12px 0;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 18px;
+  background: var(--accent);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gallery .big {
+  width: 520px;
+  height: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery .small {
+  width: 420px;
+  height: 420px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Make any image or video inside the gallery cover its container */
+.gallery .big img,
+.gallery .small img,
+.gallery .big video,
+.gallery .small video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Utility classes for hero media */
+.heroImage,
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroVideoSmall {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+  .gallery {
+    order: -1;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* Seções auxiliares (mantive algumas classes antigas para compatibilidade) */
 .main {
   display: flex;
   min-height: 100vh;
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  background-color: transparent;
+  padding: 24px;
 }
 
 .intro {
@@ -38,104 +124,36 @@
 }
 
 .intro h1 {
-  max-width: 320px;
+  max-width: 640px;
   font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--foreground);
 }
 
 .intro p {
-  max-width: 440px;
+  max-width: 760px;
   font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+  line-height: 1.8;
+  color: rgba(107, 79, 75, 0.9);
 }
 
 .ctas {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
   gap: 16px;
-  font-size: 14px;
 }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--button-secondary-border);
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-}
-
+/* ajustes de responsividade menor */
 @media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
+  .info h1 {
     font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+  .gallery .big {
+    width: 100%;
+    height: 240px;
   }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .gallery .small {
+    width: 100%;
+    height: 100px;
   }
 }

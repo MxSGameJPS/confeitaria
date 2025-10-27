@@ -1,14 +1,16 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paleta fornecida pelo cliente */
+  --background: #d87093; /* bege claro */
+  --accent: #7e0a57; /* amarelo-dourado */
+  --accent-2: #e6a4b4; /* rosa claro */
+  --foreground: #faf9f6; /* marrom elegante para textos */
+  --card-bg: #ffffff;
+  /* altura do header usada para posicionamento do hero */
+  --header-height: 72px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Não forçar modo escuro — queremos sempre a paleta da confeitaria.
+   Se preferir suportar dark mode depois, podemos adaptar com variantes. */
 
 html,
 body {
@@ -18,10 +20,19 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: linear-gradient(var(--accent), var(--background));
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  /* espaço reservado para o header fixo para que o conteúdo não fique atrás dele */
+  padding-top: var(--header-height);
 }
 
 * {

@@ -1,0 +1,21 @@
+.container {
+  text-align: center;
+  padding: 88px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.empty {
+  margin-top: 28px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  color: var(--foreground);
+  font-weight: 700;
+  text-align: center;
+}

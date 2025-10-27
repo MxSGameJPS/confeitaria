@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 36px;
+  background: var(--card-bg);
+  color: var(--accent);
+  border-top: 1px solid rgba(107, 79, 75, 0.06);
+}
+.footer small {
+  color: rgba(107, 79, 75, 0.7);
+}

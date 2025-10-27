@@ -1,0 +1,116 @@
+.cartLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.cartCount {
+  background: #c68e17;
+  color: #fff;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 50%;
+  padding: 2px 8px;
+  margin-left: 6px;
+  min-width: 22px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #fff3;
+}
+/* Exibe nome/email do usuário logado */
+.user {
+  margin-left: 18px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(198, 142, 23, 0.12);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 86px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.28); /* subtle overlay so logo remains readable */
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.brand a {
+  color: var(--foreground);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.4px;
+}
+
+/* Animated gradient logo */
+.brand .logo {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.4px;
+  background-image: linear-gradient(
+    45deg,
+    var(--accent),
+    var(--accent-2),
+    var(--foreground)
+  );
+  background-size: 250% 90%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .logo {
+    animation: none;
+    background-size: auto;
+    color: var(--foreground);
+    -webkit-background-clip: initial;
+    background-clip: initial;
+  }
+}
+.nav a {
+  margin-left: 20px;
+  color: var(--foreground);
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav a:hover {
+  background: rgba(198, 142, 23, 0.08);
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+/* give header links enough contrast when overlaying hero */
+.nav a {
+  color: rgba(255, 255, 255, 0.95);
+}
+.brand a,
+.logo {
+  color: white !important;
+}
